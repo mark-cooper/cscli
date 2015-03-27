@@ -1,0 +1,32 @@
+{
+  "name": "cscli",
+  "version": "0.0.1",
+  "description": "CollectionSpace command line interface",
+  "repository": "https://github.com/mark-cooper/cscli",
+  "main": "./index.js",
+  "bin": {
+    "cscli": "./bin/cscli.js"
+  },
+  "directories": {
+    "bin": "./bin"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "ansi": "^0.3.0",
+    "cli-table": "^0.3.1",
+    "helmsman": "^1.0.0",
+    "minimist": "^1.1.1",
+    "prompt": "^0.2.14",
+    "pwuid": "^1.0.2",
+    "underscore": "^1.8.2"
+  },
+  "keywords": [
+    "collectionspace",
+    "cli"
+  ],
+  "scripts": {},
+  "bugs": "https://github.com/mark-cooper/cscli/issues",
+  "homepage": "https://github.com/mark-cooper/cscli",
+  "author": "Mark Cooper",
+  "license": "ISC"
+}
