@@ -6,13 +6,16 @@ var path = require('path');
 var config   = require('../lib/config');
 var importer = require('../lib/import');
 
-var api  = {}; // use config for settings
+var csapi = require('csapi');
+var csapi = new csapi(config);
 
 exports.command = {
   description: "Batch import records into collectionspace"
 }
 
 if (require.main === module) {
+  console.log(csapi.opts);
+
   var argv   = require('minimist')(process.argv.slice(2));
   var table  = require('cli-table');
 
@@ -20,7 +23,7 @@ if (require.main === module) {
   var exists = fs.existsSync(dir);
   var type   = argv['type'];
 
-  var importer = new importer(api, argv).getImporter(type);
+  var importer = new importer(csapi, argv).getImporter(type);
 
   if(!exists) {
     console.log("Input directory does not exist");
@@ -43,5 +46,5 @@ if (require.main === module) {
     process.exit(1);
   }
 
-  console.log( importer.import() );
+  console.log(importer.import());
 }
