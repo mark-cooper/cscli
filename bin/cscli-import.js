@@ -43,6 +43,5 @@ if (require.main === module) {
     process.exit(1);
   }
 
-  // loop dir, read files, send to importer
   console.log( importer.import() );
 }
