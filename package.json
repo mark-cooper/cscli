@@ -14,6 +14,7 @@
   "dependencies": {
     "ansi": "^0.3.0",
     "cli-table": "^0.3.1",
+    "csapi": "git://github.com/mark-cooper/csapi",
     "glob": "^5.0.3",
     "helmsman": "^1.0.0",
     "minimist": "^1.1.1",
