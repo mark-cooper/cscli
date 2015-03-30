@@ -7,7 +7,9 @@ Quickstart
 ----------
 
 ```
-cscli setup # not yet
+# for now use module from github
+npm install mark-cooper/cscli -g
+cscli setup
 ```
 
 **Import**
