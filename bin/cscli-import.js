@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
-var fs   = require('fs');
-var path = require('path');
+var fs    = require('fs');
+var path  = require('path');
+var queue = require('queue-async');
+var util  = require('util');
 
 var config   = require('../lib/config');
 var importer = require('../lib/import');
@@ -14,8 +16,6 @@ exports.command = {
 }
 
 if (require.main === module) {
-  console.log(csapi.opts);
-
   var argv   = require('minimist')(process.argv.slice(2));
   var table  = require('cli-table');
 
@@ -46,5 +46,11 @@ if (require.main === module) {
     process.exit(1);
   }
 
-  console.log(importer.import());
+  var q = queue(1);
+  importer.import(q);
+  q.awaitAll(function(error, results) {
+    results.forEach(function(result) {
+      console.log("CSID: " + result);
+    });
+  });
 }
