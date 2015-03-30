@@ -20,6 +20,7 @@
     "minimist": "^1.1.1",
     "prompt": "^0.2.14",
     "pwuid": "^1.0.2",
+    "queue-async": "^1.0.7",
     "underscore": "^1.8.2"
   },
   "keywords": [
