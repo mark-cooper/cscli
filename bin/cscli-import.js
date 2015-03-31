@@ -24,15 +24,8 @@ if (require.main === module) {
 
   var importer = new importer(csapi, argv).getImporter(type);
 
-  if(argv['help']) {
+  if(argv['help'] || !importer.validate()) {
     console.log(importer.help());
-    process.exit(0);
-  }
-
-  if(!importer.valid()) {
-    console.log("Importer options are invalid");
-    console.log(importer.help());
-    process.exit(1);
   }
 
   var q = queue(1);
