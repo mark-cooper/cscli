@@ -20,20 +20,9 @@ if (require.main === module) {
   var table  = require('cli-table');
 
   var dir    = argv['dir'];
-  var exists = fs.existsSync(dir);
   var type   = argv['type'];
 
   var importer = new importer(csapi, argv).getImporter(type);
-
-  if(!exists) {
-    console.log("Input directory does not exist");
-    process.exit(1);
-  }
-
-  if(typeof importer === "undefined") {
-    console.log("Invalid importer type specified");
-    process.exit(1);
-  }
 
   if(argv['help']) {
     console.log(importer.help());
