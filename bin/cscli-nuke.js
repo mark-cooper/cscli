@@ -11,7 +11,7 @@ var csapi = require('csapi');
 var csapi = new csapi(config);
 
 exports.command = {
-  description: "Nuke records in collectionspace!"
+  description: "nuke records in collectionspace!"
 }
 
 // prompt to confirm

@@ -12,7 +12,7 @@ var csapi = require('csapi');
 var csapi = new csapi(config);
 
 exports.command = {
-  description: "Batch import records into collectionspace"
+  description: "batch import records into collectionspace"
 }
 
 if (require.main === module) {
