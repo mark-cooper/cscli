@@ -28,10 +28,9 @@ if (require.main === module) {
     process.exit(1);
   }
 
-  // read file to get paths
   var opts = {
     api: csapi,
-    paths: ['/path/A', '/path/B', '/path/C'],
+    file: file,
     queue: q
   };
 
