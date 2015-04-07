@@ -17,6 +17,7 @@
     "csapi": "git://github.com/mark-cooper/csapi",
     "glob": "^5.0.3",
     "helmsman": "^1.0.0",
+    "lazy": "^1.0.11",
     "minimist": "^1.1.1",
     "prompt": "^0.2.14",
     "pwuid": "^1.0.2",
