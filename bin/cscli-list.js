@@ -27,7 +27,11 @@ if (require.main === module) {
   var output = tabular ? new table({ head: properties }) : [];
 
   csapi.getListByPath('/' + path, { pgSz: 100, wf_deleted: false }, function(err, res, data) {
-    // process data
+    if(typeof data['list-item'] === "undefined") {
+      console.log('No results found.');
+      process.exit(0);
+    }
+
     data['list-item'].forEach(function(item){
       var values = [];
       properties.forEach(function(property) {
